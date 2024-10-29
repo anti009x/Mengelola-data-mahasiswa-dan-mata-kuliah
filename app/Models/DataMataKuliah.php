@@ -13,7 +13,9 @@ class DataMataKuliah extends Model
         'kode_mata_kuliah', 
         'sks', 
         'semester',
-        'nama_dosen'
+        'nama_dosen',
+        'nama_file',
+        'path'
     ];
 
     public function mahasiswa()
