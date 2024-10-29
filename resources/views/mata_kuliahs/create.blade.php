@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form class="row g-2" action="{{ route('mata_kuliahs.store') }}" method="POST">
+    <form class="row g-2" action="{{ route('mata_kuliahs.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group shadow p-3 mb-5 bg-white rounded">
@@ -39,6 +39,12 @@
         <div class="form-group shadow p-3 mb-5 bg-white rounded">
 
             <input type="text" name="nama_dosen" class="form-control" placeholder="Nama Dosen" value="{{ old('nama_dosen') }}" required>
+        </div>
+        
+        <div class="form-group shadow p-3 mb-5 bg-white rounded">
+
+            <input type="file" name="nama_file" class="form-control" placeholder="Syarat dan Ketentuan" accept=".docx,.pdf" required>
+
         </div>
 
         <button type="submit" class="btn btn-dark mt-2">Simpan</button>

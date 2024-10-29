@@ -19,4 +19,5 @@ Route::post('/mata_kuliahs', [DataMataKuliahController::class, 'store'])->name('
 Route::get('/mata_kuliahs/{dataMataKuliah}/edit', [DataMataKuliahController::class, 'edit'])->name('mata_kuliahs.edit');
 Route::put('/mata_kuliahs/{dataMataKuliah}', [DataMataKuliahController::class, 'update'])->name('mata_kuliahs.update');
 Route::delete('/mata_kuliahs/{dataMataKuliah}', [DataMataKuliahController::class, 'destroy'])->name('mata_kuliahs.destroy');
-
+// routes/web.php
+Route::get('/download/syarat/{id}', [DataMataKuliahController::class, 'downloadSyarat'])->name('download.syarat');

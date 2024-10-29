@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('sks');
             $table->string('semester');
             $table->string('nama_dosen')->nullable();
+            $table->string('nama_file');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mata_kuliahs');
+        Schema::dropIfExists('data_mata_kuliahs'); // Perbaiki nama tabel di sini
     }
 };

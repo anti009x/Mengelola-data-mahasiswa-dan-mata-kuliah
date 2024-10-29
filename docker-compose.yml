@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  sistem_akademik:
+    container_name: sistem_akademik
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - APP_HOME=/app
+    volumes:
+      - static_volume:/app/static
+      - assets_volume:/app/assets
+      - C:/syarata_dan_ketentuan:/app/syarata_dan_ketentuan
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+      - INTERNAL_STORAGE_PATH=/app/syarata_dan_ketentuan
+    networks:
+      - db_network
+      - web_network
+    ports:
+      - "8000:8000"
+    command: php -S 0.0.0.0:8000 -t /app/public
+
+volumes:
+  static_volume:
+  assets_volume:
+
+networks:
+  db_network:
+    driver: bridge
+  web_network:
+    driver: bridge

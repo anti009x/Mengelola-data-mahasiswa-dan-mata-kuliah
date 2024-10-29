@@ -17,6 +17,7 @@
                 <th>SKS</th>
                 <th>Semester</th>
                 <th>Nama Dosen</th>
+                <th>Syarat dan Ketentuan</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -29,6 +30,9 @@
                 <td>{{ $mata_kuliah->sks }}</td>
                 <td>{{ $mata_kuliah->semester }}</td>
                 <td>{{ $mata_kuliah->nama_dosen }}</td>
+                <td>
+                    <a href="{{ route('download.syarat', $mata_kuliah->id) }}" class="btn btn-dark btn-s text-white">Download</a>
+                </td>
                 <td class="text-center">
                     <a href="{{ route('mata_kuliahs.edit', $mata_kuliah->id) }}" class="btn btn-dark btn-sm">Edit</a>
                     
